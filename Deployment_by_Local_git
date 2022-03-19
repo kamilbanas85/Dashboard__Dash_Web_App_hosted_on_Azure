@@ -1,0 +1,105 @@
+### Set up enviroment
+
+# install library in ansocnda prommt
+python -m pip install --user virtualenv
+
+# find phyton.exe file in spyder
+import sys
+sys.executable
+
+
+# set up cmd in location of phyton sript
+
+# then create enviroment variable
+C:\\Users\\kamil\\anaconda3\\python.exe -m venv venvs
+
+# set up envrimental varianle
+.\venvs\Scripts\activate
+
+
+# run phyton script
+C:\\Users\\kamil\\anaconda3\\python.exe dash_proba.py
+
+# check web site on the browser
+http://localhost:8050
+
+
+############################################################################################
+############################################################################################
+############################################################################################
+###########################################################
+#### enviromental variable and requirment file
+###########################################################
+### set up anaconda comand prompt on foleder with script
+
+C:\\Users\\kamil\\anaconda3\\python.exe -m venv venvs
+
+.\venvs\Scripts\activate
+
+pip install dash
+
+## requirment file
+
+pip freeze > requirements.txt
+
+### write script with name: application.py
+
+
+############ check app
+
+# run app
+C:\\Users\\kamil\\anaconda3\\python.exe application.py
+http://localhost:3000
+http://localhost:8050
+# kill
+ctr+c
+
+############
+
+# intial git repo 
+git init
+
+git add application.py
+git add requirments.txt
+
+git commit -m "1 commit"
+
+# set up azure as remote master
+
+# git remote add RepoName <url>
+git remote set-url azure https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
+
+# change url of master
+# git remote set-url RepoName <newUrl>
+git remote add azure https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
+
+# push to azure
+git push azure master
+
+############################################################################################
+############################################################################################
+############################################################################################
+####################### docker-ize
+## create Dockerfile
+
+## bluid image
+docker build . -f Dockerfile.txt -t conteneir_01
+
+## run container to check
+docker run -p 3000:3000 conteneir_02
+
+## kill container run
+# in second command prompt in the same palce (with the same env)
+
+# get ID of ruening container
+docker ps
+# kill process
+docker stop b1413be5797d
+
+###########################################################
+###########################################################
+###########################################################
+
+
+############################
+rundll32.exe keymgr.dll,KRShowKeyMgr
