@@ -64,17 +64,20 @@ git add requirments.txt
 
 git commit -m "1 commit"
 
-# set up azure as remote master
-
+### set up azure as remote master
 # git remote add RepoName <url>
-git remote set-url azure https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
+git remote add azureRepoName https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
 
-# change url of master
+### change url of master
 # git remote set-url RepoName <newUrl>
-git remote add azure https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
+git remote set-url azure https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
 
 # push to azure
 git push azure master
+
+### to delate wrong password in cmd:
+rundll32.exe keymgr.dll,KRShowKeyMgr
+
 
 ############################################################################################
 ############################################################################################
@@ -101,5 +104,4 @@ docker stop b1413be5797d
 ###########################################################
 
 
-############################
-rundll32.exe keymgr.dll,KRShowKeyMgr
+
