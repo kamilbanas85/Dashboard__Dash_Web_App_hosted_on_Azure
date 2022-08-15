@@ -17,7 +17,7 @@
    ctr+c+c <- 2 times
     
 ####################################################################    
-### Hosting On Azure as Azure Web App
+### Hosting On Azure with Azure App Service
 
 - Create 'requirements.txt' <- incudes require libreries
    * Create And Set Up New Enviroment Variable:
