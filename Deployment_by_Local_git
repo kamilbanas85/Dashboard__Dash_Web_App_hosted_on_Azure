@@ -1,107 +1,93 @@
-### Set up enviroment
+### Check Working On Local Host
 
-# install library in ansocnda prommt
-python -m pip install --user virtualenv
+- Open CMD ( or in case Anaconda Anaconda Prompt - in case of Anacodonda Standard CMD is alsow avaliable )
+- Go to script folder: cd.. 
+- Run Script:
+   * PathWithFolder>   python app.py                             <- In case Of 'Anaconda Prompt' or standard Python installation
+   * PathWithFolder>   PathToPythonExecFile\\python.exe app.py   <- In case of Using Anaconda and standard CMD. 
+                                                                   # find phyton.exe file in spyder:
+								        import sys
+								        sys.executable
+								        
+								      Example of PathToPythonExecFile: C:\\Users\\kamil\\anaconda3\\python.exe
+- Check web site on the browser
+    http://localhost:8050
+    http://localhost:3000
+- kill
+   ctr+c+c <- 2 times
+    
+####################################################################    
+### Hosting On Azure as Azure Web App
 
-# find phyton.exe file in spyder
-import sys
-sys.executable
+- Create 'requirements.txt' <- incudes require libreries
+   * Create And Set Up New Enviroment Variable:
+   
+      # Set up cmd in location of phyton sript
+      
+      # install library if no (in ansocnda prommt):
+          python -m pip install --user virtualenv
+          
+      # then create enviroment variable:
+	  PathWithFolder>   PathToPythonExecFile\\python.exe -m venv EnvName
+	  or
+	  PathWithFolder>   python -m venv EnvName
+	
+      # Set up envrimental variable:
+	  PathWithFolder>   .\EnvName\Scripts\activate
+      
+      # Install required Libreries:
 
+	  pip install dash
+	  pip install plotly
+	  pip install pandas
+	  pip install pyodbc
+	  pip install logzero
 
-# set up cmd in location of phyton sript
+     # create requirment file
+          pip freeze > requirements.txt
 
-# then create enviroment variable
-C:\\Users\\kamil\\anaconda3\\python.exe -m venv venvs
+- Test App On New enviroment Variable - to check if libreries is sufficent
 
-# set up envrimental varianle
-.\venvs\Scripts\activate
+- Host On Azure With Local Git
 
+  * Initialize Git Repo:
+      git init
+  * Add all files from folder to repo. It shoulds include:
+      - app.py
+      - requirements.txt
+      - OtherScripts
+      - .gitignore <- optionally to exclude a file, when use git add . (f.e. file with environment variable)
+                   <- text file name: .gitignore   with text:  venvName/
 
-# run phyton script
-C:\\Users\\kamil\\anaconda3\\python.exe dash_proba.py
-
-# check web site on the browser
-http://localhost:8050
-
-
-############################################################################################
-############################################################################################
-############################################################################################
-###########################################################
-#### enviromental variable and requirment file
-###########################################################
-### set up anaconda comand prompt on foleder with script
-
-C:\\Users\\kamil\\anaconda3\\python.exe -m venv venvs
-
-.\venvs\Scripts\activate
-
-pip install dash
-
-## requirment file
-
-pip freeze > requirements.txt
-
-### write script with name: application.py
-
-
-############ check app
-
-# run app
-C:\\Users\\kamil\\anaconda3\\python.exe application.py
-http://localhost:3000
-http://localhost:8050
-# kill
-ctr+c
-
-############
-
-# intial git repo 
-git init
-
-git add application.py
-git add requirments.txt
-
-git commit -m "1 commit"
-
-### set up azure as remote master
-# git remote add RepoName <url>
-git remote add azureRepoName https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
-
-### change url of master
-# git remote set-url RepoName <newUrl>
-git remote set-url azure https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
-
-# push to azure
-git push azure master
-
-### to delate wrong password in cmd:
-rundll32.exe keymgr.dll,KRShowKeyMgr
-
-
-############################################################################################
-############################################################################################
-############################################################################################
-####################### docker-ize
-## create Dockerfile
-
-## bluid image
-docker build . -f Dockerfile.txt -t conteneir_01
-
-## run container to check
-docker run -p 3000:3000 conteneir_02
-
-## kill container run
-# in second command prompt in the same palce (with the same env)
-
-# get ID of ruening container
-docker ps
-# kill process
-docker stop b1413be5797d
-
-###########################################################
-###########################################################
-###########################################################
-
+    They can be added by command:
+      # all files form folder
+       	     git add .    
+      # Or by specify files:
+             git add FileName
+             Example:
+             git add application.py
+             git add requirments.txt
+  * Make Commit to local Repo (with comment):
+      git commit –m “menneged idenity”
+   
+  * Set up remote repo with scheme:  git remote add NameOfRemoteRepo UrlToRemoteRepo
+      git remote add azure https://dashboardproba003.scm.azurewebsites.net:443/DashboardProba003.git
+    
+      where 'UrlToRemoteRepo' can be find in ‘deplyment center’:
+    
+  * Push commit to rempte repo:   git push NameOfRemoteRepo master
+      git push azure master 
+    
+  * Push To Azure Require Creditionanls. They can be set up in ‘deplyment center’.
+    After commipush command, creditionals window apear. Cancel it. And Fill in cmd creadionals.  
+    ### to delate wrong password in cmd:
+        rundll32.exe keymgr.dll,KRShowKeyMgr
+    
+- Other git usefull comands:
+  * change url of master(f.e.when new app is created and url change):  git remote set-url RepoName NewUrl
+      git remote set-url azure https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
+    
+  * Synchronize local repo with master repo (take old commits from remote to local): git push RemoteRepoName master 
+      git push azure master
 
 
