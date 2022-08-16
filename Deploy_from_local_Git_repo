@@ -3,8 +3,8 @@
 - Open CMD ( or in case Anaconda Anaconda Prompt - in case of Anacodonda Standard CMD is alsow avaliable )
 - Go to script folder: cd.. 
 - Run Script:
-   * PathWithFolder>   python app.py                             <- In case Of 'Anaconda Prompt' or standard Python installation
-   * PathWithFolder>   PathToPythonExecFile\\python.exe app.py   <- In case of Using Anaconda and standard CMD. 
+   * PathToFolder>   python app.py                             <- In case Of 'Anaconda Prompt' or standard Python installation
+   * PathToFolder>   PathToPythonExecFile\\python.exe app.py   <- In case of Using Anaconda and standard CMD. 
                                                                    # find phyton.exe file in spyder:
 								        import sys
 								        sys.executable
@@ -17,7 +17,7 @@
    ctr+c+c <- 2 times
     
 ####################################################################    
-### Hosting On Azure with Azure App Service
+### Hosting On Azure with Azure Web App
 
 - Create 'requirements.txt' <- incudes require libreries
    * Create And Set Up New Enviroment Variable:
@@ -26,25 +26,30 @@
       
       # install library if no (in ansocnda prommt):
           python -m pip install --user virtualenv
+          or
+          pip install virtualenv
           
       # then create enviroment variable:
-	  PathWithFolder>   PathToPythonExecFile\\python.exe -m venv EnvName
+	  PathToFolder>   PathToPythonExecFile\\python.exe -m venv EnvName
 	  or
-	  PathWithFolder>   python -m venv EnvName
+	  PathToFolder>   python -m venv EnvName
 	
       # Set up envrimental variable:
-	  PathWithFolder>   .\EnvName\Scripts\activate
+	  PathToFolder>   .\EnvName\Scripts\activate
       
       # Install required Libreries:
-
+      
+	  pip install numpy
+	  pip install pandas
 	  pip install dash
 	  pip install plotly
-	  pip install pandas
-	  pip install pyodbc
 	  pip install logzero
+	  pip install apscheduler
+	  pip install pyodbc
+	  pip install retry
 
      # create requirment file
-          pip freeze > requirements.txt
+          PathToFolder>   pip freeze > requirements.txt
 
 - Test App On New enviroment Variable - to check if libreries is sufficent
 
@@ -59,7 +64,7 @@
       - .gitignore <- optionally to exclude a file, when use git add . (f.e. file with environment variable)
                    <- text file name: .gitignore   with text:  venvName/
 
-    They can be added by command:
+    Files can be added by command:
       # all files form folder
        	     git add .    
       # Or by specify files:
@@ -89,5 +94,4 @@
     
   * Synchronize local repo with master repo (take old commits from remote to local): git push RemoteRepoName master 
       git push azure master
-
 
