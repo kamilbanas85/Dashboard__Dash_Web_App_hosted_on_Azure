@@ -1,0 +1,27 @@
+- Create Rescource -> Logic App
+- In Logic App Create Workflow -> Overwiew -> Create Workflow In Designer
+                                or Workflow
+      -> Add -> Fill Name, etc -> Select It -> Designer
+- Create in designer:
+
+	 * Built-in -> Trriger -> Recurrence
+	 * Azure -> Action -> Invoke Resource Operation
+	  
+	    # Connection:
+	      - Login by Portal
+	      - Or the best - Connect with Managed Identity:
+	          Menaged Identity Related To Logic App (For Logic App Enable Menaged Identity)
+	          Get Perimition for Menaged Identity To Restart:
+	          Inside App Service -> Access Control -> Add role assigment -> Contributor -> Assign sccess to 'Managed Idenity'
+	    # Set up:
+	      https://helicaltech.com/create-azure-logic-app-to-restart-azure-function-app/
+	      
+	      - Subscription: This should be available in the drop-down by default, if not then enter your Subscription Id.
+	      - Resource Group: The resource group in which your Function app resides
+	      - Resource Provider: Microsoft.Web
+              - Short Resource Id: Goto ”Properties” section of your Function App Service and Check “ResourceId”.
+                                   Short Resource Id starts from “ site/—– “ till end.
+	      - Client Api Version: we can found Client Api Version on (https://docs.microsoft.com/en-us/rest/api/appservice/web-apps).
+	                            This is a date value with the name of “Api Version”. 
+	      - Action Name: “restart”.
+      # Save and Run the Trigger.  
