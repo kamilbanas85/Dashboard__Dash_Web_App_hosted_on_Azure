@@ -89,6 +89,9 @@
         rundll32.exe keymgr.dll,KRShowKeyMgr
     
 - Other git usefull comands:
+  * Force push <- when you load new repo from other path to exisiting master: git push --force NameOfRemoteRepo master
+      git push --force azure master
+
   * change url of master(f.e.when new app is created and url change):  git remote set-url RepoName NewUrl
       git remote set-url azure https://dashboardfromlocalgit01.scm.azurewebsites.net:443/DashboardFromLocalGit01.git
     
