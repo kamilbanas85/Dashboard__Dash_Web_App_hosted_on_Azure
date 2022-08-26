@@ -1,4 +1,4 @@
-# Azure_Web_App
+# Dash App hosted on Azure - automatic data update from SQL Server
 
 Repository contains examples of a Dash web app hosted on AZURE as the 'Azure Web Apps'. Examples show a basic plot and different methods automatic data updating from SQL server:
  - Interval Component
