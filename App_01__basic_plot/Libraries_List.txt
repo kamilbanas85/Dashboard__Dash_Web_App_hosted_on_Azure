@@ -1,0 +1,11 @@
+pip install numpy
+pip install pandas
+
+pip install dash
+pip install plotly
+
+pip install logzero
+pip install apscheduler
+pip install pyodbc
+
+pip install retry
