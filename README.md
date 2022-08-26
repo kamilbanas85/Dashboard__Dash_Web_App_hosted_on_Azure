@@ -1,10 +1,9 @@
 # Azure_Web_App
 
 Repository contains examples of a Dash web app hosted on AZURE as the 'Azure Web Apps'. Examples show a basic plot and different methods automatic data updating from SQL server:
- - interval
- - store
- - servesideOutput
- - backendscheduler
+ - Interval Component
+ - ServesideOutput
+ - BackgroundScheduler
  
 
 'Libraries_List' file contains most common libraries list ( 'dash-extensions' require  '--use-feature=2020-resolver' )
