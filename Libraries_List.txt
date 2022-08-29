@@ -9,4 +9,6 @@ pip install dash-extensions --use-feature=2020-resolver
 pip install pyodbc
 pip install retry
 
+# pip install feather-format
+
 
