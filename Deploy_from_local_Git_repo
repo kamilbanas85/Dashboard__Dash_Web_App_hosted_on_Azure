@@ -97,4 +97,13 @@
     
   * Synchronize local repo with master repo (take old commits from remote to local): git push RemoteRepoName master 
       git push azure master
+      
+  * Show remote
+      git remote -v
+      
+  * When creating new folder with new repo and need fetch histry from remote
+      git pull azureMain master  --allow-unrelated-histories
+  
+  * To remove old remote connection to remote
+      git remote rm azure
 
