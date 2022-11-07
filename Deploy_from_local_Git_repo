@@ -38,7 +38,8 @@
 	  PathToFolder>   .\EnvName\Scripts\activate
       
       # Install required Libreries:
-      	pip install numpy
+      	
+	pip install numpy
 	pip install scipy
 	pip install pandas
 
