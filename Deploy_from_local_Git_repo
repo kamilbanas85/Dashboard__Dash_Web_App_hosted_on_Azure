@@ -39,20 +39,20 @@
       
       # Install required Libreries:
       	
-	pip install numpy
-	pip install scipy
-	pip install pandas
+	  pip install numpy
+	  pip install scipy
+	  pip install pandas
 
-	pip install plotly
-	pip install dash
-	pip install dash_bootstrap_components
+	  pip install plotly
+	  pip install dash
+	  pip install dash_bootstrap_components
 
-	pip install pyodbc
-	pip install SQLAlchemy
-	pip install retry
-	pip install apscheduler
+	  pip install pyodbc
+	  pip install SQLAlchemy
+	  pip install retry
+	  pip install apscheduler
 
-	pip install json
+	  pip install json
      
 
      # create requirment file
