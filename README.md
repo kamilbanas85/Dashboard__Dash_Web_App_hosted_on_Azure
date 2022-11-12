@@ -9,6 +9,9 @@ A different methods of transfer data between components were used:
  - ServerSideOutput
  - Saving files into disk file.
  
+ MuliPage app examples show 2 diffrent aproach to transfer data beteen pages:
+ - using dcc.Store element - can be extended to ServerSideOutput
+ - using Cache
 
 'Libraries_List' file contains most common libraries list ( 'dash-extensions' require  '--use-feature=2020-resolver' )
 requirements.txt <- requirement file related to libraries list from a file 'Libraries_List'
